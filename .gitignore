@@ -1,0 +1,6 @@
+*.mti
+*.vstf
+*.wlf
+work
+.gitattributes
+*.mpf
