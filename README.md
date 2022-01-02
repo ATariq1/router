@@ -41,6 +41,7 @@ The SPICE simulation testbench is created in Cadence Virtuoso. The outputs drive
 <img src="images/spice_testbench.png" alt="uvm" width="700"/>
 
 This simulation encompasses all parasitic capacitances and shows actual signal transitions and delays for the main inputs/outputs.
+
 <img src="images/spice_simulation.png" alt="uvm" width="700"/>
 
 
