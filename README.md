@@ -4,7 +4,7 @@ This repo contains the SystemVerilog HDL code for simple router. The router desi
 - UVM testbench for constrained random verification
 - Synthesized netlist using Cadence RC
 - Layout using Cadence Innovus for a 45nm technology node
-- Spice netlist and gate-level simulation with all parasitic capacitances using Cadence Virtuoso
+- SPICE netlist and gate-level simulation with all parasitic capacitances using Cadence Virtuoso
 
 ## Design
 This is an implementation of a simple router (or packet switch). At a high-level, the router does the following:
@@ -27,5 +27,23 @@ The UVM testbench tests the router using randomly generated data packets. Specif
 <img src="images/uvm_block_diagram.png" alt="uvm" width="700"/>
 
 ## Synthesis and Layout
+Synthesis is done using Cadence RC for a 45nm technology node. Overall, there are no timing violations
+The synthesized netlist is made into a layout using Cadence Innovus. Layout Characteristics:
+- No DRC violations
+- LVS clean
+- 65.80 um wide and 62.88 um tall 
+
+<img src="images/layout.png" alt="uvm" width="700"/>
 
 ## Spice Extraction and Simulation
+A SPICE netlist is extracted from the final layout. This netlist is used for SPICE simulation of the entire router design.
+The SPICE simulation testbench is created in Cadence Virtuoso. The outputs drive 10fF load capacitances
+<img src="images/spice_testbench.png" alt="uvm" width="700"/>
+
+This simulation encompasses all parasitic capacitances and shows actual signal transitions and delays for the main inputs/outputs.
+
+<img src="images/spice_simulation.png" alt="uvm" width="700"/>
+
+
+
+
